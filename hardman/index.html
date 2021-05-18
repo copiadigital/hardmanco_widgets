@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C400%2C600%2C700&#038;ver=202105071604' type='text/css' media='all' />
+    <style>
+        .hardmancoWidget { font-family:"Libre Franklin", sans-serif; }
+        .hardmancoWidget a{ text-decoration:none; }
+        .hardmancoWidget h2{ display:block; color:#205059; font-size:32px; font-weight:400; line-height:23px; text-decoration:none; }
+        .hardmancoWidget .title{ display:block; color:#205059; font-size:20px; font-weight:700; line-height:23px; text-decoration:none; margin:30px 0 0 0; }
+        .hardmancoWidget .date{ font-size:12px; font-weight:600; line-height:18px; text-transform:uppercase; color:#878787; margin:10px 0 0 0;  }
+        .hardmancoWidget .headline{ font-size:14px; font-weight:400; line-height:21px; color:#595959; margin:10px 0 0 0;  }
+        .hardmancoWidget .link{ display:flex; color:#205059; font-size:14px; line-height:20px; margin:10px 0 0 0; }
+        .hardmancoWidget .link:hover{ text-decoration:underline; }
+        .hardmancoWidget .link:before{ content:""; display:inline-block; width:20px; height:20px; background:url("https://www.hardmanandco.com/wp-content/themes/hardman/dist/images/icon-go-teal.svg") left center no-repeat; background-size:contain; margin:0 5px 0 0; }
+        .hardmancoWidget .byline{ display:flex; margin:30px 0 0 0; padding:10px 0 0 0; justify-content:flex-end; border-top:1px solid #DDDDDD; }
+        .hardmancoWidget .byline__logo{ display:inline-block; width:auto; height:24px; margin:0 6px 0 0; }
+        .hardmancoWidget .byline__text{ line-height:24px; font-size:14px; color:#595959 }
+        .hardmancoWidget .byline__text a{ color:#205059; }
+    </style>
+    <script>
+        var clientID = 2691;
+        $(function() {
+            $.getJSON('https://www.hardmanandco.com/wp-json/research/v1/list/'+clientID+'/?per_page=3', function(data) {
+                for ( var i=0; i < data.length; i++ ) {
+                    data[i]['id'] = i;
+                    var post = document.importNode(document.getElementById('postTemplate'), true).innerHTML.replace(/{{.*?}}/g, function(match){
+                        return data[i][match.replace(/[\{\}]/g, '')]
+                    })
+                    $(post).appendTo('#hardmancoPosts');
+                }
+            });
+        });
+    </script>
+    <template id="postTemplate">
+        <div class="post">
+            <a href="{{permalink}}">
+                <h5 class="title">{{title}}</h5>
+            </a>
+            <h6 class="date">{{date}}</h6>
+            <p class="headline">{{headline}}</p>
+            <a class="link" href="{{permalink}}">Read more</a>
+        </div>
+    </template>
+</head>
+<body>
+  <div class="hardmancoWidget">
+      <h2>Company Research - Hardman &amp; Co</h2>
+      <div id="hardmancoPosts"></div>
+      <div class="byline">
+          <img class="byline__logo" src="https://www.hardmanandco.com/wp-content/themes/hardman/dist/images/logo-small-teal.svg">
+          <span class="byline__text">Research provided by <a href="https://www.hardmanandco.com/">Hardman &amp; Co</a></span>
+      </div>
+  </div>
+</body>
+</html>
+
+
+<!--)-->
+<!--background-position-x 50%-->
+<!--background-position-y 50%-->
+<!--background-repeat-x-->
+<!--background-repeat-y-->
+<!--background-size 35px 40px-->
+<!--bottom 10px-->
