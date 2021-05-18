@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="fidelity.css" />
+    <script src="https://investment-trusts.fidelity.co.uk/static_cms/fil_site_assets/js/vendor.js"></script>
+    <script src="https://investment-trusts.fidelity.co.uk/static_cms/fil_site_assets/js/main.js"></script>
+    <script>
+        $(function() {
+            $.getJSON('https://www.hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3', function(data) {
+                for ( var i=0; i < data.length; i++ ) {
+                    data[i]['id'] = i;
+                    var post = document.importNode(document.getElementById('postTemplate'), true).innerHTML.replace(/{{.*?}}/g, function(match){
+                        return data[i][match.replace(/[\{\}]/g, '')]
+                    })
+                    $(post).appendTo('#postContainer');
+                }
+            });
+        });
+    </script>
+    <template id="postTemplate">
+        <div class="post">
+            <a href="{{permalink}}">
+                <h5>{{title}}</h5>
+            </a>
+            <h6>{{date}}</h6>
+            <p>{{headline}}</p>
+            <a href="{{permalink}}">Read more</a>
+        </div>
+    </template>
+</head>
+<body>
+  <h2>Company Research - Hardman &amp; Co</h2>
+  <div id="postContainer"></div>
+</body>
+</html>
