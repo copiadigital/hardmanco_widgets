@@ -1,3 +1,4 @@
+![Hardman & Co](https://raw.github.com/copiadigital/hardmanco_widgets/master/images/hardman-co.svg)
 # Hardman & Co Research Widgets
 
 To pull your company's research pieces onto your website automatically there are two options:
@@ -28,3 +29,8 @@ This will return a JSON string for each article in the following format:
 If you would prefer to use a drop-in code snippet to achieve the same thing, you can find it in the example folder.
 
 Don't forget to put the correct client ID, provided by Hardman.
+
+### Support
+If you need further support please contact [Copia Digital](https://www.copiadigital.com)
+
+![Copia Digital](https://raw.github.com/copiadigital/hardmanco_widgets/master/images/copia.svg)
