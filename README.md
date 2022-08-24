@@ -1,5 +1,4 @@
 ![Hardman & Co](https://raw.github.com/copiadigital/hardmanco_widgets/master/images/hardman-co.svg)
-<img src="https://raw.github.com/copiadigital/hardmanco_widgets/master/images/hardman-co.svg">
 # Hardman & Co Research Widgets
 
 To pull your company's research pieces onto your website automatically there are two options:
@@ -35,4 +34,3 @@ Don't forget to put the correct client ID, provided by Hardman.
 If you need further support please contact [Copia Digital](https://www.copiadigital.com)
 
 ![Copia Digital](https://raw.github.com/copiadigital/hardmanco_widgets/master/images/copia.svg)
-<img src="https://raw.github.com/copiadigital/hardmanco_widgets/master/images/copia.svg">
