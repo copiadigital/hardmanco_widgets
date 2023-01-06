@@ -9,10 +9,10 @@ To pull your company's research pieces onto your website automatically there are
 ### JSON Endpoint
 Every Hardman client has a unique ID and can access all of their research reports via a URL with the ID and the number of reports to display as part of the URL query.
 
-`https://www.hardmanandco.com/wp-json/research/v1/list/[clientID]/?per_page=[numberOfArticles]`
+`https://hardmanandco.com/wp-json/research/v1/list/[clientID]/?per_page=[numberOfArticles]`
 
 Example:
-`https://www.hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3`
+`https://hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3`
 
 This will return a JSON string for each article in the following format:
 
