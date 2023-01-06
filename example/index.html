@@ -7,7 +7,7 @@
     <script src="https://investment-trusts.fidelity.co.uk/static_cms/fil_site_assets/js/main.js"></script>
     <script>
         $(function() {
-            $.getJSON('https://www.hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3', function(data) {
+            $.getJSON('https://hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3', function(data) {
                 for ( var i=0; i < data.length; i++ ) {
                     data[i]['id'] = i;
                     var post = document.importNode(document.getElementById('postTemplate'), true).innerHTML.replace(/{{.*?}}/g, function(match){
