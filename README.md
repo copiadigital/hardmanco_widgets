@@ -9,10 +9,10 @@ To pull your company's research pieces onto your website automatically there are
 ### JSON Endpoint
 Every Hardman client has a unique ID and can access all of their research reports via a URL with the ID and the number of reports to display as part of the URL query.
 
-`https://hardmanandco.com/wp-json/research/v1/list/[clientID]/?per_page=[numberOfArticles]`
+`https://hardmanandco.com/wp-json/research/v1/list/[clientID]/?monthly=0&per_page=[numberOfArticles]`
 
 Example:
-`https://hardmanandco.com/wp-json/research/v1/list/2691/?per_page=3`
+`https://hardmanandco.com/wp-json/research/v1/list/2691/?monthly=0&per_page=3`
 
 This will return a JSON string for each article in the following format:
 
@@ -24,6 +24,12 @@ This will return a JSON string for each article in the following format:
   "permalink": "The direct URL of the report"
 }
 ```
+
+### Showing monthly reports
+The above code will hide the monthly reports by default. To show them, change the montly query parameter to 1.
+
+Example:
+`https://hardmanandco.com/wp-json/research/v1/list/2691/?monthly=1&per_page=3`
 
 ### Code Snippet
 If you would prefer to use a drop-in code snippet to achieve the same thing, you can find it in the example folder.
